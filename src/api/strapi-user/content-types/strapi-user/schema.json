@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "strapi_users",
+  "info": {
+    "singularName": "strapi-user",
+    "pluralName": "strapi-users",
+    "displayName": "Strapi User",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "notes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::strapi-note.strapi-note",
+      "mappedBy": "Strapi_User"
+    },
+    "Image": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

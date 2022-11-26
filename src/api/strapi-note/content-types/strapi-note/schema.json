@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "strapi_notes",
+  "info": {
+    "singularName": "strapi-note",
+    "pluralName": "strapi-notes",
+    "displayName": "Strapi Note",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "Category": {
+      "type": "string",
+      "required": true
+    },
+    "isFavourite": {
+      "type": "boolean",
+      "default": false
+    },
+    "Strapi_User": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::strapi-user.strapi-user",
+      "inversedBy": "notes"
+    }
+  }
+}
